@@ -42,7 +42,6 @@ manager.executeTask()
 
 # 2. クロージャを他の関数や構造に渡す
 クロージャを他の関数や構造体に渡す場合、元の関数スコープを超えて保持される可能性があるため、@escapingが必要。
-保存は自動で行われる。
 ```swift
 func performTask(handler: @escaping () -> Void) {
     DispatchQueue.global().async {
@@ -62,7 +61,7 @@ startTask()
 ```
 
 # 3. 非同期処理など、後で呼び出すために保存する
-非同期処理では、渡されたクロージャを保持して後で実行するため、@escapingが必要。
+非同期処理では、渡されたクロージャを保持して後で実行するため（自動で行われる）、@escapingが必要。
 ```swift
 func fetchData(completion: @escaping (String) -> Void) {
     DispatchQueue.global().async {

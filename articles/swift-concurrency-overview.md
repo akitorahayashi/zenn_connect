@@ -1,12 +1,12 @@
 ---
-title: "Swift Concurrencyの概要"
+title: "Swift Concurrency"
 emoji: "⚡️"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["ios", "swift", "concurrency", "async"]
+topics: ["ios", "swift", "concurrency", "async", "await"]
 published: false
 ---
 # はじめに
-Swift 5.5以降で導入されたSwift Concurrencyは、Swiftにおける非同期処理や並列処理を簡単かつ安全に記述するための仕組みである。従来の非同期処理（例えば、コールバックやDispatchQueue）と比較して、コードの可読性・安全性を向上させることができる。
+Swift 5.5以降で導入されているSwift Concurrencyは、Swiftにおける非同期処理や並列処理を簡単かつ安全に記述するための仕組みである。従来の非同期処理（例えば、コールバックやDispatchQueue）と比較して、コードの可読性・安全性を向上させることができる。
 
 # サンプルアプリ
 https://github.com/akitorahayashi/techtrain_book_reviewer
@@ -69,14 +69,14 @@ func fetchBookReview(
 ## 2. Task
 TaskはSwift Concurrencyにおける非同期処理を実行する基本単位である。同期メソッド内で非同期処理を実行する必要があるときに使用し、非同期関数を呼び出すための文脈を作るために使う。
 ### 処理の効率化
-Taskを使うことで、非同期処理が待機中でもスレッドがブロックされないため、効率的に処理を行うことができる。例えば、ネットワーク通信やファイルの読み書きのような時間のかかる処理中に、他のタスクを並行して実行できる。
+Taskを使うことで、非同期処理が待機中でもスレッドがブロックされないため、効率的に処理を行うことができる。例えば、ネットワーク通信やファイルの読み書きのような時間のかかる処理中に、結果を待たずに他のタスクを実行できる。
 ```swift
 Task {
     try? await Task.sleep(nanoseconds: 3 * 1_000_000_000) // 3秒待機
     print("ここは非同期処理の結果を待ってから実行される部分")
 }
 
-print("ここは先に実行される部分")
+print("ここは非同期処理の結果を待たずに実行される部分")
 ```
 ### 並行処理の実行
 ```swift
@@ -284,4 +284,4 @@ private func fetchAndUpdateUI() async {
     }
 ```
 # まとめ
-Swift 5.5以降で導入されたSwift Concurrencyは、async/awaitによるシンプルな非同期処理や、Actorによるデータ競合の防止によって、従来のコールバックやDispatchQueueを使用した複雑なコードを簡潔かつ安全に書き換えるためのSwift言語の仕組みである。
+Swift Concurrencyは、async/awaitによるシンプルな非同期処理や、Actorによるデータ競合の防止によって、従来のコールバックやDispatchQueueを使用した複雑なコードを簡潔かつ安全に書き換えるための言語自体の仕組みである。

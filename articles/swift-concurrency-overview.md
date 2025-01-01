@@ -6,7 +6,7 @@ topics: ["ios", "swift", "concurrency", "async"]
 published: false
 ---
 # はじめに
-Swift Concurrencyは、Swift 5.5以降で、Swiftにおける非同期処理や並列処理を簡単かつ安全に記述するための仕組みである。従来の非同期処理（例えば、コールバックやDispatchQueue）と比較して、コードの可読性・安全性を向上させることができる。
+Swift 5.5以降で導入されたSwift Concurrencyは、Swiftにおける非同期処理や並列処理を簡単かつ安全に記述するための仕組みである。従来の非同期処理（例えば、コールバックやDispatchQueue）と比較して、コードの可読性・安全性を向上させることができる。
 
 # サンプルアプリ
 https://github.com/akitorahayashi/techtrain_book_reviewer
@@ -284,4 +284,4 @@ private func fetchAndUpdateUI() async {
     }
 ```
 # まとめ
-Swift Concurrencyは、Swift 5.5以降で、async/awaitによるシンプルな非同期処理や、Actorによるデータ競合の防止によって、従来のコールバックやDispatchQueueを使用した複雑なコードを簡潔かつ安全に書き換えるためのSwift言語の仕組みである。
+Swift 5.5以降で導入されたSwift Concurrencyは、async/awaitによるシンプルな非同期処理や、Actorによるデータ競合の防止によって、従来のコールバックやDispatchQueueを使用した複雑なコードを簡潔かつ安全に書き換えるためのSwift言語の仕組みである。

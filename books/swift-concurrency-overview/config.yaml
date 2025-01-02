@@ -1,11 +1,9 @@
 title: "Swift Concurrencyの概要"
-summary: "Swift 5.5以降で導入されたSwift Concurrencyは、非同期処理や並列処理を簡単かつ安全に記述するための仕組みである。
+summary: "Swift 5.5以降で導入されたSwift Concurrencyは、非同期処理や並行処理を簡単かつ安全に記述するための仕組みである。
 async や await を使うことで、従来の方法に比べて、コードの可読性を向上させることができ、
-TaskやActorといった機能により、スレッド管理や並列処理を安全に扱えるため、
+TaskやActorといった機能により、スレッドの管理や並行処理を安全に扱えるため、
 アプリの処理の効率と保守性を高めることができる。"
 
-# "Swift 5.5以降で導入されているSwift Concurrencyは、Swiftにおける非同期処理や並列処理を簡単かつ安全に記述するための仕組みである。
-# 従来の非同期処理（例えば、コールバックやDispatchQueue）と比較して、コードの可読性・安全性を向上させることができる。"
 topics: ["ios", "swift", "concurrency", "async", "await"]
 published: true
 price: 0 # 有料の場合200〜5000
